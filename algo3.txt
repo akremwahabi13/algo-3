@@ -1,0 +1,54 @@
+PROCEDURE dot_Scalar_proc(v1,v2: ARRAY_OF INTEGER[2],var x:INTEGER)
+VAR
+BEGIN
+  x:= v1[0]*v2[0]+v1[1]*v2[1];
+END
+ALGORITHM dot_product
+VAR
+    v: ARRAY_OF INTEGER[2];
+    w:ARRAY_OF INTEGER[2];
+    n,i,j,ps:INTEGER;
+BEGIN
+Read (n);
+    FOR i FROM 0 TO n-1  DO
+    FOR j FROM 0 TO 1 DO
+        Read (v[j])
+        Read (w[j])
+    END_FOR
+    dot_Scalar_proc(v,w,ps);
+    IF (ps:=0) THEN
+        Write ("vectors are orthogonals")
+    ELSE
+        Write ("vectors are not orthogonals ")
+    END_IF
+    END_FOR
+END
+
+FUNCTION dot_scalar_function(): INTEGER
+VAR
+    v1,v2: ARRAY_OF INTEGER[2];
+    x:=INTEGER
+BEGIN
+    RETURN x:= v1[0]*v2[0]+v1[1]*v2[1]; ;
+END
+
+ALGORITHM dot_product
+VAR
+    v: ARRAY_OF INTEGER[2];
+    w: ARRAY_OF INTEGER[2];
+    n,i,j,ps:INTEGER;
+BEGIN
+ Read (n);
+    FOR i FROM 0 TO n-1  DO
+    FOR j FROM 0 TO 1 DO
+        Read (v[j])
+        Read (w[j])
+    END_FOR
+    ps:=dot_scalar_function()
+    IF (ps:=0) THEN
+        Write ("vectors are orthogonals")
+    ELSE
+        Write ("vectors are not orthogonals ")
+    END_IF
+    END_FOR
+END
